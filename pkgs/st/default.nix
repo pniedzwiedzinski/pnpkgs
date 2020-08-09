@@ -19,8 +19,8 @@ stdenv.mkDerivation rec {
   '';
 
   meta = {
-    homepage = "https://st.suckless.org/";
-    description = "Simple Terminal for X from Suckless.org Community";
+    homepage = "https://github.com/LukeSmithXYZ/st";
+    description = "Luke's fork of the suckless simple terminal (st) with vim bindings and Xresource compatibility.";
     license = licenses.mit;
     maintainers = with maintainers; [ pniedzwiedzinski ];
     platforms = platforms.linux;
