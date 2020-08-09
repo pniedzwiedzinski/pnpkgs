@@ -1,4 +1,4 @@
-{ stdenv, fetchgit, pkgconfig, writeText, libX11, ncurses, libXft }:
+{ stdenv, fetchgit, pkgconfig, writeText, libX11, ncurses, libXft, harfbuzzFull }:
 
 with stdenv.lib;
 
@@ -12,7 +12,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ pkgconfig ncurses ];
-  buildInputs = [ libX11 libXft ];
+  buildInputs = [ libX11 libXft harfbuzzFull ];
 
   installPhase = ''
     TERMINFO=$out/share/terminfo make install PREFIX=$out
