@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, pkgconfig, writeText, libX11, ncurses, libXft }:
+{ stdenv, fetchgit, pkgconfig, writeText, libX11, ncurses, libXft }:
 
 with stdenv.lib;
 
