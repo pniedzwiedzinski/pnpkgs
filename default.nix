@@ -16,6 +16,10 @@
 
   example-package = pkgs.callPackage ./pkgs/example-package { };
   st = pkgs.callPackage ./pkgs/st { };
+  dwm = pkgs.callPackage ./pkgs/dwm { };
+  dwmblocks = pkgs.callPackage ./pkgs/dwmblocks { };
+  dmenu = pkgs.callPackage ./pkgs/dmenu { };
+  amfora = pkgs.callPackage ./pkgs/amfora { };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
 }
