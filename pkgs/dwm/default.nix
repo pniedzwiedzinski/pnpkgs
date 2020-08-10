@@ -24,7 +24,6 @@ stdenv.mkDerivation rec {
     homepage = "https://github.com/LukeSmithXYZ/dwm";
     description = "Luke's build of dwm";
     license = stdenv.lib.licenses.mit;
-    maintainers = with stdenv.lib.maintainers; [pniedzwiedzinski];
     platforms = with stdenv.lib.platforms; all;
   };
 }

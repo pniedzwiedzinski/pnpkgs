@@ -30,7 +30,6 @@ stdenv.mkDerivation rec {
     homepage = "https://github.com/LukeSmithXYZ/dmenu";
     description = "dmenu setup for LARBS";
     license = licenses.mit;
-    maintainers = with maintainers; [pniedzwiedzinski];
     platforms = platforms.all;
   };
 }
