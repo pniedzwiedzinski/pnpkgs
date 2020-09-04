@@ -14,8 +14,7 @@ stdenv.mkDerivation rec {
   #nativeBuildInputs = [ pkgconfig ];
 
   installPhase = ''
-    sed -i '4d;5d;6d' Makefile
-    cat Makefile
+    sed -i 's/(PREFIX)/(out)/g' Makefile
     make PREFIX=$out install
   '';
 
