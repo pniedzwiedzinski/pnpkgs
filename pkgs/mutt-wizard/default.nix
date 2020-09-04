@@ -11,10 +11,11 @@ stdenv.mkDerivation rec {
     sha256 = "1bb9429wabv85zja2y89vhj15qcd10acbg5k6ylilw067wzs9ks5";
   };
 
-  nativeBuildInputs = [ pkgconfig ];
+  #nativeBuildInputs = [ pkgconfig ];
 
   installPhase = ''
     sed -i '4d;5d;6d' Makefile
+    cat Makefile
     make PREFIX=$out install
   '';
 
