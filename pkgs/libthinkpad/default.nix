@@ -14,7 +14,7 @@ stdenv.mkDerivation rec {
   buildInputs = [ systemd acpid ];
 
   buildPhase = ''
-    cmake . -DCMAKE_INSTALL_PREFIX=/usr
+    cmake . -DCMAKE_INSTALL_PREFIX=$out
     make
   '';
 
