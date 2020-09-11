@@ -1,4 +1,4 @@
-{ stdenv, fetchgit, systemd, acpid }:
+{ stdenv, fetchgit, cmake, systemd, acpid }:
 
 stdenv.mkDerivation rec {
   pname = "libthinkpad";
@@ -10,7 +10,13 @@ stdenv.mkDerivation rec {
     sha256 = "0jjnv6ipnndl5p5fni4v9dkh0m22xrrr04b16ywqdsv7c4sb771w";
   };
 
+  nativeBuildInputs = [ cmake ];
   buildInputs = [ systemd acpid ];
+
+  buildPhase = ''
+    cmake . -DCMAKE_INSTALL_PREFIX=/usr
+    make
+  '';
 
   meta = {
     homepage = "https://github.com/libthinkpad/libthinkpad";
