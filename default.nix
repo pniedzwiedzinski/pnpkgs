@@ -17,7 +17,6 @@ in
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  example-package = pkgs.callPackage ./pkgs/example-package { };
   st = pkgs.callPackage ./pkgs/st { };
   dwm = pkgs.callPackage ./pkgs/dwm { };
   dwmblocks = pkgs.callPackage ./pkgs/dwmblocks { };
@@ -26,7 +25,8 @@ in
   libthinkpad = pkgs.callPackage ./pkgs/libthinkpad { };
   dockd = pkgs.callPackage ./pkgs/dockd { };
   larbs-mail = pkgs.callPackage ./pkgs/larbs-mail { };
-  fx = (pkgs.callPackage ./pkgs/fx { }).package;
+
+  #fx = (pkgs.callPackage ./pkgs/fx { }).package;
   # xcb-util = pkgs.callPackage ./pkgs/xcb-util { }; #unknown error
   # amfora = pkgs.callPackage ./pkgs/amfora { };
   # ...
