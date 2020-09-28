@@ -6,7 +6,7 @@ let
   newsboatConfig = "${voidrice}/.config/newsboat/config";
 in
 
-mkDerivation {
+stdenv.mkDerivation {
   pname = "larbs-news";
   version = "1.0";
   unpackPhase = "true";
