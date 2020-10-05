@@ -23,10 +23,10 @@ in
   dockd = pkgs.callPackage ./pkgs/dockd { };
 
   larbs = {
-    st = pkgs.callPackage ./pkgs/st { };
-    dwm = pkgs.callPackage ./pkgs/dwm { };
-    dwmblocks = pkgs.callPackage ./pkgs/dwmblocks { };
-    dmenu = pkgs.callPackage ./pkgs/dmenu { };
+    st = pkgs.callPackage ./pkgs/larbs/st { };
+    dwm = pkgs.callPackage ./pkgs/larbs/dwm { };
+    dwmblocks = pkgs.callPackage ./pkgs/larbs/dwmblocks { };
+    dmenu = pkgs.callPackage ./pkgs/larbs/dmenu { };
   };
 
   larbs-mail = pkgs.callPackage ./pkgs/larbs-mail { };
