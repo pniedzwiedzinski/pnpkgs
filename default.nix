@@ -9,7 +9,6 @@
 { pkgs ? import <nixpkgs> {} }:
 
 let
-  wrapNeomutt = pkgs.callPackage ./pkgs/neomutt_configurable/wrapper.nix { };
   wrapDS = pkgs.callPackage ./pkgs/larbs-scripts/displayselect/wrapper.nix { };
   displayselect_unwrapped = pkgs.callPackage ./pkgs/larbs-scripts/displayselect/displayselect.nix { };
 in
