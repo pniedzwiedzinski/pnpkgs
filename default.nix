@@ -24,7 +24,6 @@ in
   pndwm = pkgs.callPackage ./pkgs/dwm/pndwm.nix { };
   dwmblocks = pkgs.callPackage ./pkgs/dwmblocks { };
   dmenu = pkgs.callPackage ./pkgs/dmenu { };
-  xwallpaper = pkgs.callPackage ./pkgs/xwallpaper { };
   libthinkpad = pkgs.callPackage ./pkgs/libthinkpad { };
   dockd = pkgs.callPackage ./pkgs/dockd { };
   larbs-mail = pkgs.callPackage ./pkgs/larbs-mail { };
