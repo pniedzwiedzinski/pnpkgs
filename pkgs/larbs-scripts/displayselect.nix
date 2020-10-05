@@ -1,21 +1,12 @@
-{ stdenv, buildEnv, callPackage, lib, xrandr, libnotify, arandr }:
-
-displayselect:
+{ stdenv, buildEnv, callPackage, xrandr, libnotify, arandr }:
+with stdenv.lib;
 
 let
-
-  mapCase = options:
-  builtins.concatStringsSep "\n"
-  (builtins.map
-  (option: "\t\"${option}\") ${builtins.getAttr option options} ;;")
-  (builtins.attrNames options));
-
-  wrapper = { moreOptions ? {} }:
-  let
-    dmenu = callPackage ../../dmenu { };
-  in
+  voidrice = callPackage ../voidrice.nix { };
+  dmenu = callPackage ../dmenu { };
+in
   buildEnv {
-    name = "displayselect-env";
+    name = "displayselect";
 
     paths = [
       xrandr
@@ -26,8 +17,7 @@ let
 
     postBuild = ''
       mkdir -p $out/bin
-      cp ${displayselect}/bin/displayselect $out/bin
-      echo ${mapCase moreOptions} >> $out/bin/test
+      cp ${voidrice}/.local/bin/displayselect $out/bin
     '';
 
 
@@ -35,6 +25,4 @@ let
       description = "A fancy monitor configuration menu.";
       homepage = "https://github.com/LukeSmithXYZ/voidrice";
     };
-  };
-in
-  lib.makeOverridable wrapper
+  }

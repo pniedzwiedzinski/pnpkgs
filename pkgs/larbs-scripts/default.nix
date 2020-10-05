@@ -2,13 +2,13 @@
 with stdenv.lib;
 let
   setbg = callPackage ./setbg.nix { };
-  ds = callPackage ./new_ds.nix { };
+  displayselect = callPackage ./displayselect.nix { };
 in
   buildEnv {
     name = "larbs-scripts";
     paths = [
       setbg
-      ds
+      displayselect
     ];
 
     meta = {

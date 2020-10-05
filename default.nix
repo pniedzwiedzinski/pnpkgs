@@ -27,9 +27,7 @@ in
   larbs-mail = pkgs.callPackage ./pkgs/larbs-mail { };
   larbs-news = pkgs.callPackage ./pkgs/larbs-news { };
   larbs-nvim = pkgs.callPackage ./pkgs/larbs-nvim { };
-  dmenuunicode = pkgs.callPackage ./pkgs/dmenuunicode { };
   larbs-scripts = pkgs.callPackage ./pkgs/larbs-scripts { };
-  displayselect = pkgs.callPackage ./pkgs/larbs-scripts/new_ds.nix { };
 
   #fx = (pkgs.callPackage ./pkgs/fx { }).package;
   # xcb-util = pkgs.callPackage ./pkgs/xcb-util { }; #unknown error
