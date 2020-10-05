@@ -8,22 +8,23 @@
 
 { pkgs ? import <nixpkgs> {} }:
 
-let
-  wrapNeomutt = pkgs.callPackage ./pkgs/neomutt_configurable/wrapper.nix { };
-in
 {
   # The `lib`, `modules`, and `overlay` names are special
   lib = import ./lib { inherit pkgs; }; # functions
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  st = pkgs.callPackage ./pkgs/st { };
-  dwm = pkgs.callPackage ./pkgs/dwm { };
-  pndwm = pkgs.callPackage ./pkgs/dwm/pndwm.nix { };
-  dwmblocks = pkgs.callPackage ./pkgs/dwmblocks { };
-  dmenu = pkgs.callPackage ./pkgs/dmenu { };
+
   libthinkpad = pkgs.callPackage ./pkgs/libthinkpad { };
   dockd = pkgs.callPackage ./pkgs/dockd { };
+
+  larbs = {
+    st = pkgs.callPackage ./pkgs/larbs/st { };
+    dwm = pkgs.callPackage ./pkgs/larbs/dwm { };
+    dwmblocks = pkgs.callPackage ./pkgs/larbs/dwmblocks { };
+    dmenu = pkgs.callPackage ./pkgs/larbs/dmenu { };
+  };
+
   larbs-mail = pkgs.callPackage ./pkgs/larbs-mail { };
   larbs-news = pkgs.callPackage ./pkgs/larbs-news { };
   larbs-nvim = pkgs.callPackage ./pkgs/larbs-nvim { };
