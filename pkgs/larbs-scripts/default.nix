@@ -2,7 +2,7 @@
 with stdenv.lib;
 let
   setbg = callPackage ./setbg.nix { };
-  ds = callPackage ./displayselect { };
+  ds = callPackage ./new_ds.nix { };
 in
   buildEnv {
     name = "larbs-scripts";

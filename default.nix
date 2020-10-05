@@ -10,8 +10,6 @@
 
 let
   wrapNeomutt = pkgs.callPackage ./pkgs/neomutt_configurable/wrapper.nix { };
-  wrapDS = pkgs.callPackage ./pkgs/larbs-scripts/displayselect/wrapper.nix { };
-  displayselect_unwrapped = pkgs.callPackage ./pkgs/larbs-scripts/displayselect/displayselect.nix { };
 in
 {
   # The `lib`, `modules`, and `overlay` names are special
@@ -31,7 +29,7 @@ in
   larbs-nvim = pkgs.callPackage ./pkgs/larbs-nvim { };
   dmenuunicode = pkgs.callPackage ./pkgs/dmenuunicode { };
   larbs-scripts = pkgs.callPackage ./pkgs/larbs-scripts { };
-  displayselect = wrapDS displayselect_unwrapped { };
+  displayselect = pkgs.callPackage ./pkgs/larbs-scripts/new_ds.nix { };
 
   #fx = (pkgs.callPackage ./pkgs/fx { }).package;
   # xcb-util = pkgs.callPackage ./pkgs/xcb-util { }; #unknown error
