@@ -35,6 +35,5 @@ in
 
   #fx = (pkgs.callPackage ./pkgs/fx { }).package;
   # xcb-util = pkgs.callPackage ./pkgs/xcb-util { }; #unknown error
-  amfora = pkgs.callPackage ./pkgs/amfora { };
   # ...
 }
