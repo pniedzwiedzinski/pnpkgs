@@ -3,7 +3,7 @@ with stdenv.lib;
 
 let
   voidrice = callPackage ../voidrice.nix { };
-  dmenu = callPackage ../dmenu { };
+  dmenu = callPackage ../larbs/dmenu { };
 in
   buildEnv {
     name = "displayselect";
