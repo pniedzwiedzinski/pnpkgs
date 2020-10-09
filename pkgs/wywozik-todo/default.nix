@@ -33,8 +33,10 @@ stdenv.mkDerivation {
 
   installPhase = ''
       mkdir -p $out/bin
-      cp main.py $out/bin/wywozik-todo
-      echo '${configFile}' > $out/bin/config.py
+      cp main.py $out/main.py
+      echo '${configFile}' > $out/config.py
+
+      ln -s $out/main.py $out/bin/wywozik-todo
   '';
 
   meta = {
