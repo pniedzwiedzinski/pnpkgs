@@ -14,4 +14,10 @@ in
       kaiosrt
       firefox59
     ];
+
+    meta = {
+      license = {
+        free = false;
+      };
+    };
   }
