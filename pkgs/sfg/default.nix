@@ -3,7 +3,7 @@ with stdenv.lib;
 
 let
   pname = "sfg";
-  version = "0.1";
+  version = "0.2";
 in
 buildGoModule {
   inherit pname version;
