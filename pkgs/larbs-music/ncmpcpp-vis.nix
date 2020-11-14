@@ -1,4 +1,4 @@
-{ stdenv ncmpcpp }:
+{ stdenv, ncmpcpp }:
 
 (ncmpcpp.override {
   visualizerSupport = true;
