@@ -5,7 +5,7 @@ in
   stdenv.mkDerivation {
     name = "slider";
 
-    src = voidrice
+    src = voidrice;
 
     buildPhase = ''
       sed -i 's:ffmpeg:${ffmpeg}/bin/ffmpeg:g' .local/bin/slider
