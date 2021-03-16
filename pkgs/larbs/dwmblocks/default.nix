@@ -1,4 +1,4 @@
-{ stdenv, fetchgit, libX11, config_h ? null, patches ? [] }:
+{ stdenv, lib, fetchgit, libX11, config_h ? null, patches ? [] }:
 
 with stdenv.lib;
 
@@ -16,7 +16,7 @@ stdenv.mkDerivation rec {
   buildInputs = [ libX11 ];
 
   prePatch = ''
-    ${stdenv.lib.optionalString (config_h) "cp ${config_h} config.h"}
+    ${lib.optionalString (config_h != null) "cp ${config_h} config.h"}
   '';
 
   installPhase = ''
